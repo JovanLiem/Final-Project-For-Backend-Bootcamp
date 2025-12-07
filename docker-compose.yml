@@ -1,0 +1,55 @@
+services:
+  auth-service:
+    build: ./auth-service
+    container_name: auth-service
+    environment:
+      DB_HOST: 1234
+      DB_PORT: 5432
+      DB_USER: 1234
+      DB_PASSWORD: asdasd
+      DB_NAME: postgres
+      REDIS_HOST: 1234
+      REDIS_PORT: 19353
+      RABBITMQ_HOST: sdsd
+      RABBITMQ_PORT: 5671
+      RABBITMQ_USER: ASD
+      RABBITMQ_PASSWORD: sdcsdc
+      JWT_SECRET: HUUUUH
+    ports:
+      - "8080:8001"
+
+  order-service:
+    build: ./order-service
+    container_name: order-service
+    environment:
+      DB_HOST: 1234
+      DB_PORT: 5432
+      DB_USER: 1234
+      DB_PASSWORD: asdasd
+      DB_NAME: postgres
+      REDIS_HOST: 1234
+      REDIS_PORT: 19353
+      RABBITMQ_HOST: sdsd
+      RABBITMQ_PORT: 5671
+      RABBITMQ_USER: ASD
+      RABBITMQ_PASSWORD: sdcsdc
+      JWT_SECRET: HUUUUH
+    ports:
+      - "8081:8002"
+
+  inventory-worker:
+    build: ./inventory-worker
+    container_name: inventory-worker
+    environment:
+      DB_HOST: 1234
+      DB_PORT: 5432
+      DB_USER: 1234
+      DB_PASSWORD: asdasd
+      DB_NAME: postgres
+      REDIS_HOST: 1234
+      REDIS_PORT: 19353
+      RABBITMQ_HOST: sdsd
+      RABBITMQ_PORT: 5671
+      RABBITMQ_USER: ASD
+      RABBITMQ_PASSWORD: sdcsdc
+      JWT_SECRET: HUUUUH
